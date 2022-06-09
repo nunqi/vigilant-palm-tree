@@ -1,0 +1,18 @@
+<h1>Show Revenue</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @revenue.title %>
+  </li>
+
+  <li>
+    <strong>Value:</strong>
+    <%= @revenue.value %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.revenue_path(@conn, :edit, @revenue) %></span> |
+<span><%= link "Back", to: Routes.revenue_path(@conn, :index) %></span>
