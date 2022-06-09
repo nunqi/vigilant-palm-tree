@@ -18,7 +18,7 @@ defmodule VigilantPalmTreeWeb.Router do
   end
 
   scope "/", VigilantPalmTreeWeb do
-    pipe_through :browser
+    pipe_through [:browser, :require_authenticated_user]
 
     get "/", PageController, :index
 
