@@ -205,4 +205,28 @@ defmodule VigilantPalmTree.Item do
   def change_revenue(%Revenue{} = revenue, attrs \\ %{}) do
     Revenue.changeset(revenue, attrs)
   end
+
+  def five_bigger_expenses(user_id) do
+    Repo.all(from e in Expense, where: e.user_id == ^user_id, order_by: e.value)
+    |> get_last(5)
+  end
+
+  def five_bigger_revenues(user_id) do
+    Repo.all(from r in Revenue, where: r.user_id == ^user_id, order_by: r.value)
+    |> get_last(5)
+  end
+
+  def monthly_expenses(user_id) do
+    Repo.all(from e in Expense, where: e.inserted_at > ago(1, "month") and e.user_id == ^user_id)
+  end
+
+  def monthly_revenues(user_id) do
+    Repo.all(from r in Revenue, where: r.inserted_at > ago(1, "month") and r.user_id == ^user_id)
+  end
+
+  defp get_last(arr, n) when length(arr) <= n, do: arr
+  defp get_last(arr, n) do
+    [_head | tail] = arr
+    get_last(tail, n)
+  end
 end

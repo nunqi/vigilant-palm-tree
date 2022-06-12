@@ -22,6 +22,8 @@ defmodule VigilantPalmTreeWeb.Router do
 
     get "/", PageController, :index
 
+    get "/report", ReportController, :index
+
     resources "/expenses", ExpenseController
     resources "/revenues", RevenueController
   end
