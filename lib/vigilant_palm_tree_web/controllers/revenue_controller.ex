@@ -6,7 +6,7 @@ defmodule VigilantPalmTreeWeb.RevenueController do
   alias VigilantPalmTree.Accounts
 
   def index(conn, _params) do
-    revenues = Item.list_revenues()
+    revenues = Item.list_revenues(conn.assigns.current_user.id)
     render(conn, "index.html", revenues: revenues)
   end
 

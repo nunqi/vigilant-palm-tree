@@ -6,7 +6,7 @@ defmodule VigilantPalmTreeWeb.ExpenseController do
   alias VigilantPalmTree.Accounts
 
   def index(conn, _params) do
-    expenses = Item.list_expenses()
+    expenses = Item.list_expenses(conn.assigns.current_user.id)
     render(conn, "index.html", expenses: expenses)
   end
 

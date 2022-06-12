@@ -21,6 +21,10 @@ defmodule VigilantPalmTree.Item do
     Repo.all(Expense)
   end
 
+  def list_expenses(user_id) do
+    Repo.all(from e in Expense, where: e.user_id == ^user_id)
+  end
+
   @doc """
   Gets a single expense.
 
@@ -115,6 +119,10 @@ defmodule VigilantPalmTree.Item do
   """
   def list_revenues do
     Repo.all(Revenue)
+  end
+
+  def list_revenues(user_id) do
+    Repo.all(from r in Revenue, where: r.user_id == ^user_id)
   end
 
   @doc """
