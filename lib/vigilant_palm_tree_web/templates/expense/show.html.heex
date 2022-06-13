@@ -1,18 +1,20 @@
 <h1>Show Expense</h1>
 
-<ul>
-
-  <li>
-    <strong>Title:</strong>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Visualize Expense
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Title:</strong> 
     <%= @expense.title %>
-  </li>
-
-  <li>
-    <strong>Value:</strong>
+    </li>
+    <li class="list-group-item"><strong>Value:</strong> 
     <%= @expense.value %>
-  </li>
+    </li>
+  </ul>
+</div>
 
-</ul>
 
-<span><%= link "Edit", to: Routes.expense_path(@conn, :edit, @expense) %></span> |
-<span><%= link "Back", to: Routes.expense_path(@conn, :index) %></span>
+
+<span><%= link "Edit", to: Routes.expense_path(@conn, :edit, @expense), class: "btn btn-link" %></span> |
+<span><%= link "Back", to: Routes.expense_path(@conn, :index), class: "btn btn-link" %></span>

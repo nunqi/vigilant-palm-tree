@@ -5,15 +5,20 @@
     </div>
   <% end %>
 
-  <%= label f, :title %>
-  <%= text_input f, :title %>
-  <%= error_tag f, :title %>
+  <div class="mb-3">
+    <%= label f, :title, class: "form-label" %>
+    <%= text_input f, :title, class: "form-control" %>
+    <%= error_tag f, :title %>
+  </div>
 
-  <%= label f, :value %>
-  <%= number_input f, :value, step: "any" %>
-  <%= error_tag f, :value %>
+
+  <div class="mb-3">
+    <%= label f, :value, class: "form-label" %>
+    <%= number_input f, :value, step: "any", class: "form-control" %>
+    <%= error_tag f, :value %>
+  </div>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save", class: "btn btn-primary" %>
   </div>
 </.form>

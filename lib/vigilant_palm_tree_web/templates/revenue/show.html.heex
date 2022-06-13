@@ -1,18 +1,18 @@
 <h1>Show Revenue</h1>
 
-<ul>
-
-  <li>
-    <strong>Title:</strong>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Visualize Revenue
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Title:</strong> 
     <%= @revenue.title %>
-  </li>
-
-  <li>
-    <strong>Value:</strong>
+    </li>
+    <li class="list-group-item"><strong>Value:</strong> 
     <%= @revenue.value %>
-  </li>
+    </li>
+  </ul>
+</div>
 
-</ul>
-
-<span><%= link "Edit", to: Routes.revenue_path(@conn, :edit, @revenue) %></span> |
-<span><%= link "Back", to: Routes.revenue_path(@conn, :index) %></span>
+<span><%= link "Edit", to: Routes.revenue_path(@conn, :edit, @revenue), class: "btn btn-link" %></span> |
+<span><%= link "Back", to: Routes.revenue_path(@conn, :index), class: "btn btn-link" %></span>

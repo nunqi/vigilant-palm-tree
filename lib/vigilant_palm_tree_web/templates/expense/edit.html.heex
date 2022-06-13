@@ -2,4 +2,4 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.expense_path(@conn, :update, @expense)) %>
 
-<span><%= link "Back", to: Routes.expense_path(@conn, :index) %></span>
+<span><%= link "Back", to: Routes.expense_path(@conn, :index), class: "btn btn-secondary" %></span>

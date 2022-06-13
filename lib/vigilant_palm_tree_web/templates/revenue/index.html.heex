@@ -1,28 +1,32 @@
 <h1>Listing Revenues</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Value</th>
-
-      <th></th>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Value</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-<%= for revenue <- @revenues do %>
-    <tr>
-      <td><%= revenue.title %></td>
-      <td><%= revenue.value %></td>
+    <%= for revenue <- @revenues do %>
+      <tr>
+        <td><%= revenue.id %></td>
 
-      <td>
-        <span><%= link "Show", to: Routes.revenue_path(@conn, :show, revenue) %></span>
-        <span><%= link "Edit", to: Routes.revenue_path(@conn, :edit, revenue) %></span>
-        <span><%= link "Delete", to: Routes.revenue_path(@conn, :delete, revenue), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
+        <td><%= revenue.title %></td>
+        <td><%= revenue.value %></td>
+
+        <td>
+          <span><%= link "Show", to: Routes.revenue_path(@conn, :show, revenue), class: "btn btn-primary" %></span>
+          <span><%= link "Edit", to: Routes.revenue_path(@conn, :edit, revenue), class: "btn btn-primary" %></span>
+          <span><%= link "Delete", to: Routes.revenue_path(@conn, :delete, revenue), class: "btn btn-primary", method: :delete, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+
   </tbody>
 </table>
+
 
 <span><%= link "New Revenue", to: Routes.revenue_path(@conn, :new) %></span>
