@@ -2,7 +2,7 @@
 Trabalho final de Programação Funcional
 
 ### Equipe
-Emanuel Leão Sá
+Emanuel Leão Sá  
 Felipe Natan Barbosa  
 
 
